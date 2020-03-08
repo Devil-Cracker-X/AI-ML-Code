@@ -1,5 +1,5 @@
-
 import csv
+
 graph = {}
 w = csv.writer(open("output.csv", "w"))
 
@@ -19,18 +19,35 @@ def add_child():
     p = add_parent()
     print("number of child")
     n = int(input())
+    if n == 0:
+        print("No Child")
     print("Enter Child")
-    glist = []
+    gList = []
     i = 0
     while i < n:
         ch = int(input())
-        glist.insert(i, ch)
-        graph[p] = glist
+        gList.insert(i, ch)
+        graph[p] = gList
         i += 1
-    del glist
+    del gList
 
 
-print("enter number of nodes")
+def bfs():
+    queue = []
+    final = []
+    for x in graph:
+        if not queue.__contains__(x):
+            queue.append(x)
+            final.append(x)
+        temp = graph[x]
+        for y in temp:
+            if not queue.__contains__(y):
+                queue.append(y)
+                final.append(y)
+    print(final)
+
+
+print("enter number of nodes ")
 nn = int(input())
 j = 0
 while j < nn:
@@ -39,3 +56,4 @@ while j < nn:
 
 to_csv()
 print(graph)
+bfs()
