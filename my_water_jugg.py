@@ -140,10 +140,6 @@ while ( True ):
         print("stop now", n)
         break
 
-
-# lis
-
-
 n = 14
 
 index = 0
