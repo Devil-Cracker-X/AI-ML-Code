@@ -1,4 +1,4 @@
-class waterjug:
+class Water_Jugg:
     c = int()
     d = int()
     parent = int()
@@ -12,13 +12,11 @@ p = 0
 
 obj
 
-
-obj[p] = waterjug()
+obj[p] = Water_Jugg()
 
 obj[p].c = 0
 obj[p].d = 0
 obj[p].parent = 0
-
 
 lis = [[0, 0]]
 vlist = []
@@ -34,7 +32,7 @@ def fillA(lis, n):
     if [a, b] not in lis:
         lis.append([a, b])
         p = p + 1
-        obj[p] = waterjug()
+        obj[p] = Water_Jugg()
         obj[p].c = a
         obj[p].d = b
         obj[p].parent = n
@@ -48,7 +46,7 @@ def fillB(lis, n):
     if [a, b] not in lis:
         lis.append([a, b])
         p = p + 1
-        obj[p] = waterjug()
+        obj[p] = Water_Jugg()
         obj[p].c = a
         obj[p].d = b
         obj[p].parent = n
@@ -63,7 +61,7 @@ def emptyA(lis, n):
     if [a, b] not in lis:
         lis.append([a, b])
         p = p + 1
-        obj[p] = waterjug()
+        obj[p] = Water_Jugg()
         obj[p].c = a
         obj[p].d = b
         obj[p].parent = n
@@ -78,7 +76,7 @@ def emptyB(lis, n):
     if [a, b] not in lis:
         lis.append([a, b])
         p = p + 1
-        obj[p] = waterjug()
+        obj[p] = Water_Jugg()
         obj[p].c = a
         obj[p].d = b
         obj[p].parent = n
@@ -89,7 +87,7 @@ def BA(lis, n):
     a = lis[n][0]
     b = lis[n][1]
     v = a + b
-    if (v > 3):
+    if v > 3:
         a = 3
         b = v - 3
     else:
@@ -98,7 +96,7 @@ def BA(lis, n):
     if [a, b] not in lis:
         lis.append([a, b])
         p = p + 1
-        obj[p] = waterjug()
+        obj[p] = Water_Jugg()
         obj[p].c = a
         obj[p].d = b
         obj[p].parent = n
@@ -109,7 +107,7 @@ def AB(lis, n):
     a = lis[n][0]
     b = lis[n][1]
     v = a + b
-    if (v > 4):
+    if v > 4:
         a = v - 4
         b = 4
     else:
@@ -118,13 +116,13 @@ def AB(lis, n):
     if [a, b] not in lis:
         lis.append([a, b])
         p = p + 1
-        obj[p] = waterjug()
+        obj[p] = Water_Jugg()
         obj[p].c = a
         obj[p].d = b
         obj[p].parent = n
 
 
-while ( True ):
+while True:
     try:
         if check == 1:
             vlist.append([lis[n][0], lis[n][1]])
@@ -148,18 +146,17 @@ m = 2
 k = 0
 print(m, k)
 while True:
-    if (obj[x].c == m and obj[x].d == k):
-        index = (obj[x].parent)
+    if obj[x].c == m and obj[x].d == k:
+        index = obj[x].parent
         m = lis[index][0]
         k = lis[index][1]
         print(m, k)
-        if (index == 0):
+        if index == 0:
             break
         x = 0
     x = x + 1
 
-
 a = 0
-while (a != 14):
+while a != 14:
     print(obj[a].c, obj[a].d, obj[a].parent)
     a = a + 1
